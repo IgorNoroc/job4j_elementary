@@ -29,7 +29,7 @@ public class MatrixTest {
     }
 
     @Test
-    public void when10no9() {
+    public void when9no9() {
         Matrix matrix = new Matrix();
         int[][] table = matrix.multiple(9);
         int[][] expect = {
