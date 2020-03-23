@@ -28,4 +28,12 @@ public class SortSelectedTest {
         int[] expect = new int[] {1, 14, 21, 50, 52};
         assertThat(result, is(expect));
     }
+
+    @Test
+    public void whenSort9Numbers() {
+        int[] input = new int[] {501, 102, 520, 21, 14, 23, 65, -1, -32};
+        int[] result = SortSelected.sort(input);
+        int[] expect = new int[] {-32, -1, 14, 21, 23, 65, 102, 501, 520};
+        assertThat(result, is(expect));
+    }
 }
