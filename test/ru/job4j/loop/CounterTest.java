@@ -1,6 +1,7 @@
 package ru.job4j.loop;
 
 import org.junit.Test;
+import ru.job4j.loop.Counter;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
