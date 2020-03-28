@@ -6,20 +6,16 @@ public class Defragment {
             if (array[index] == null) {
                 int point = index; // указатель, на не null ячейку.
 
-                while (array[index] == null) {
-                    index++;
+                while (array[point] == null && point < array.length - 1) {
+                    point++;
 
-                    if (index == array.length) {
-                        break;
-                    }
-                    if (array[index] != null) {
-                        String temp = array[index];
-                        array[index] = null;
-                        array[point] = temp;
+                    if (array[point] != null) {
+                        String temp = array[point];
+                        array[point] = null;
+                        array[index] = temp;
                         break;
                     }
                 }
-                index = point;
             }
             System.out.print(array[index] + " ");
         }
