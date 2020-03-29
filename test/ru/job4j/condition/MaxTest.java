@@ -22,4 +22,10 @@ public class MaxTest {
         int result = Max.max(3, 3);
         assertThat(result, is(3));
     }
+
+    @Test
+    public void when4Numbers() {
+        int result = Max.add(1, 1, 1, 1);
+        assertThat(result, is(4));
+    }
 }

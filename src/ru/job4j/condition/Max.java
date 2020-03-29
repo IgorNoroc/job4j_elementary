@@ -5,6 +5,22 @@ public class Max {
         boolean result = left > right;
         return result ? left : right;
     }
+
+    public static int add(int first, int second) {
+        return first + second;
+    }
+
+    public static int add(int first, int second, int third) {
+        return add(
+                first,
+                add(second, third));
+    }
+
+    public static int add(int first, int second, int third, int four) {
+        return add(
+                first,
+                add(second, third, four));
+    }
 }
 
 
