@@ -1,6 +1,14 @@
 package ru.job4j.loop;
 
+/**
+ * 5.9. Крест в псевдографике. [#257487]
+ */
 public class Slash {
+    /**
+     * Рисуем крестик из нулей в консоли.
+     *
+     * @param size размер доски.
+     */
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
@@ -19,6 +27,11 @@ public class Slash {
         System.out.println();
     }
 
+    /**
+     * Main.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Draw by 3");
         draw(3);

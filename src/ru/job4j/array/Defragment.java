@@ -1,14 +1,22 @@
 package ru.job4j.array;
 
+
+/**
+ * 6.8. Дефрагментация массива.[#257438].
+ */
 public class Defragment {
+    /**
+     * Перемещяем все пустые ячейки в конец массива.
+     *
+     * @param array массив.
+     * @return обновленный массив.
+     */
     public static String[] compress(String[] array) {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
-                int point = index; // указатель, на не null ячейку.
-
+                int point = index;
                 while (array[point] == null && point < array.length - 1) {
                     point++;
-
                     if (array[point] != null) {
                         String temp = array[point];
                         array[point] = null;

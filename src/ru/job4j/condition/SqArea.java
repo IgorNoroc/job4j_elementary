@@ -1,6 +1,16 @@
 package ru.job4j.condition;
 
+/**
+ *  8. Стороны прямоугольника.[#257446]
+ */
 public class SqArea {
+    /**
+     * Площадь прямоугольника.
+     *
+     * @param p периметр.
+     * @param k длина.
+     * @return
+     */
     public static double square(int p, int k) {
         int h = p / (2 * (k + 1));
         int l = h * k;

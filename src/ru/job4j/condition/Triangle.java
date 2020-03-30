@@ -1,8 +1,10 @@
 package ru.job4j.condition;
 
-import static java.lang.Math.negateExact;
 import static java.lang.Math.sqrt;
 
+/**
+ * 4.3.1. А существует ли треугольник?[#257414]
+ */
 public class Triangle {
     private Point first;
     private Point second;

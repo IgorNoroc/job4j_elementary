@@ -8,6 +8,7 @@ package ru.job4j.calculator;
 public class Calculator {
     /**
      * Main.
+     *
      * @param args - args.
      */
     public static void main(String[] args) {

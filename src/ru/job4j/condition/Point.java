@@ -3,6 +3,9 @@ package ru.job4j.condition;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 
+/**
+ * 4. Расстояние между точками в трехмерном пространстве.[#257569]
+ */
 public class Point {
     private int x;
     private int y;
@@ -19,10 +22,22 @@ public class Point {
         this.z = z;
     }
 
+    /**
+     * Растояние между тремя точками в трехмерном пространстве.
+     *
+     * @param that другая точка.
+     * @return растояние между точками.
+     */
     public double distance3d(Point that) {
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
     }
 
+    /**
+     * Растояние между двумя точками.
+     *
+     * @param that другая точка.
+     * @return растояние между точками.
+     */
     public double distance(Point that) {
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
     }

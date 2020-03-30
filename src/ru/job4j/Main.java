@@ -1,6 +1,12 @@
 package ru.job4j;
 
 public class Main {
+    /**
+     * Main.
+     * Первая программа.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Hello world");
     }
