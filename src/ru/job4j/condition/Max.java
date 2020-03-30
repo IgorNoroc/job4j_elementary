@@ -6,20 +6,14 @@ public class Max {
         return result ? left : right;
     }
 
-    public static int add(int first, int second) {
-        return first + second;
+    public static int max(int first, int second, int third) {
+        boolean result = first > max(second, third);
+        return result ? first : max(second, third);
     }
 
-    public static int add(int first, int second, int third) {
-        return add(
-                first,
-                add(second, third));
-    }
-
-    public static int add(int first, int second, int third, int four) {
-        return add(
-                first,
-                add(second, third, four));
+    public static int max(int first, int second, int third, int four) {
+        boolean result = first > max(second, third, four);
+        return result ? first : max(second, third, four);
     }
 }
 
