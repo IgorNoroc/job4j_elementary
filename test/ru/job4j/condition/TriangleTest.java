@@ -13,7 +13,7 @@ public class TriangleTest {
         Point third = new Point(1, 3);
         Triangle triangle = new Triangle(first, second, third);
         double result = triangle.area();
-        double expected = 0.41;
+        double expected = 0.64;
         assertEquals(expected, result, 0.01);
     }
 }
