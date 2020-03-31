@@ -1,5 +1,7 @@
 package ru.job4j.pojo;
 
+import java.util.Objects;
+
 /**
  * 3. Массивы и модели.[#257590]
  */
@@ -10,6 +12,23 @@ public class Product {
     public Product(String name, int count) {
         this.name = name;
         this.count = count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Product product = (Product) o;
+        return count == product.count && Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, count);
     }
 
     public String getName() {
