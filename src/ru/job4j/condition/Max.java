@@ -39,8 +39,8 @@ public class Max {
      * @return максимальное число.
      */
     public static int max(int first, int second, int third, int four) {
-        boolean result = first > max(second, third, four);
-        return result ? first : max(second, third, four);
+        boolean result = max(first, second) > max(third, four);
+        return result ? max(first, second) : max(third, four);
     }
 }
 
