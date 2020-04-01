@@ -44,9 +44,9 @@ public class Tracker {
      * @return массив из совпавших имён.
      */
     public Item[] findByName(String key) {
-        Item[] result = new Item[findAll().length];
+        Item[] result = new Item[position];
         int size = 0;
-        for (int i = 0; i < findAll().length; i++) {
+        for (int i = 0; i < position; i++) {
             if (items[i].getName().equals(key)) {
                 result[size++] = items[i];
             }
@@ -62,9 +62,10 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (int i = 0; i < findAll().length; i++) {
+        for (int i = 0; i < position; i++) {
             if (items[i].getId().equals(id)) {
                 result = items[i];
+                break;
             }
         }
         return result;
