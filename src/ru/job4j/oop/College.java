@@ -8,5 +8,9 @@ public class College {
         Freshman freshman = new Freshman();
         Student st = freshman;
         Object object = st;
+
+        Object object1 = new Object();
+        Student student = (Student) object1;
+        Freshman freshman1 = (Freshman) student;
     }
 }
