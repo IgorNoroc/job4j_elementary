@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package ru.job4j.poly;
 
 /**
  * 3. Интерфейс Input[#257539]
