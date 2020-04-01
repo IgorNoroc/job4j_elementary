@@ -27,7 +27,7 @@ public class Tracker {
      * @return список активных заявок.
      */
     public Item[] findAll() {
-        Item[] result = new Item[items.length];
+        Item[] result = new Item[position];
         int size = 0;
         for (Item item : items) {
             if (item != null) {
@@ -55,23 +55,6 @@ public class Tracker {
     }
 
     /**
-     * Поиск в хранилище по идентификатору.
-     *
-     * @param id идентификатор.
-     * @return найденное совпадение.
-     */
-    public Item findById(String id) {
-        Item result = null;
-        for (int i = 0; i < position; i++) {
-            if (items[i].getId().equals(id)) {
-                result = items[i];
-                break;
-            }
-        }
-        return result;
-    }
-
-    /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
      *
@@ -80,5 +63,45 @@ public class Tracker {
     private String generateId() {
         Random rm = new Random();
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
+    }
+
+    /**
+     * Поиск индекса по id
+     *
+     * @param id Id
+     * @return нужный индекс.
+     */
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    /**
+     * Поиск в хранилище по идентификатору.
+     *
+     * @param id идентификатор.
+     * @return найденное совпадение.
+     */
+    public Item findById(String id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    /**
+     * Замена заявки.
+     *
+     * @param id сторая заявка.
+     * @param item новая заявка.
+     */
+    public void replace(String id, Item item) {
+        int index = indexOf(id);
+        item.setId(items[index].getId());
+        items[index] = item;
     }
 }
