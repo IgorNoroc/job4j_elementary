@@ -12,8 +12,7 @@ public class Max {
      * @return максимальное число.
      */
     public static int max(int left, int right) {
-        boolean result = left > right;
-        return result ? left : right;
+        return left > right ? left : right;
     }
 
     /**
@@ -25,8 +24,7 @@ public class Max {
      * @return максимальное число.
      */
     public static int max(int first, int second, int third) {
-        boolean result = first > max(second, third);
-        return result ? first : max(second, third);
+        return first > max(second, third) ? first : max(second, third);
     }
 
     /**
@@ -39,8 +37,7 @@ public class Max {
      * @return максимальное число.
      */
     public static int max(int first, int second, int third, int four) {
-        boolean result = max(first, second) > max(third, four);
-        return result ? max(first, second) : max(third, four);
+        return max(first, second) > max(third, four) ? max(first, second) : max(third, four);
     }
 }
 
