@@ -13,8 +13,8 @@ public class College {
         vasea.setGroup("4d");
         vasea.setEnter(new Date());
         System.out.println("фио студента: " + vasea.getName() + " "
-                                            + vasea.getSurname() + "\n"
-                                            + "группа: " + vasea.getGroup() + "\n"
+                                            + vasea.getSurname() + System.lineSeparator()
+                                            + "группа: " + vasea.getGroup() + System.lineSeparator()
                                             + "дата поступленя: " + vasea.getEnter());
     }
 }
