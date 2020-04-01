@@ -99,10 +99,11 @@ public class Tracker {
      * @param id   старая заявка.
      * @param item новая заявка.
      */
-    public void replace(String id, Item item) {
+    public boolean replace(String id, Item item) {
         int index = indexOf(id);
         item.setId(items[index].getId());
         items[index] = item;
+        return true;
     }
 
     /**
@@ -110,10 +111,11 @@ public class Tracker {
      *
      * @param id идентификатор заявки.
      */
-    public void delete(String id) {
+    public boolean delete(String id) {
         int index = indexOf(id);
         System.arraycopy(items, index + 1, items, index, (position - index));
         items[position - 1] = null;
         position--;
+        return true;
     }
 }
