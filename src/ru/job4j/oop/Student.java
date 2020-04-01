@@ -3,7 +3,7 @@ package ru.job4j.oop;
 /**
  * 1.2. Вызов метода объекта[#257573]
  */
-public class Student {
+public class Student extends Object {
     /**
      * Объект играет мелодию в консоль.
      */
