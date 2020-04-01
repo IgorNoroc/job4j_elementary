@@ -96,7 +96,7 @@ public class Tracker {
     /**
      * Замена заявки.
      *
-     * @param id сторая заявка.
+     * @param id старая заявка.
      * @param item новая заявка.
      */
     public void replace(String id, Item item) {
