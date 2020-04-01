@@ -96,12 +96,24 @@ public class Tracker {
     /**
      * Замена заявки.
      *
-     * @param id старая заявка.
+     * @param id   старая заявка.
      * @param item новая заявка.
      */
     public void replace(String id, Item item) {
         int index = indexOf(id);
         item.setId(items[index].getId());
         items[index] = item;
+    }
+
+    /**
+     * Удаляем заявку.
+     *
+     * @param id идентификатор заявки.
+     */
+    public void delete(String id) {
+        int index = indexOf(id);
+        System.arraycopy(items, index + 1, items, index, (position - index));
+        items[position - 1] = null;
+        position--;
     }
 }
