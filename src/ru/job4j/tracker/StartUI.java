@@ -24,8 +24,8 @@ public class StartUI {
                 Item[] items = tracker.findAll();
                 for (Item item : items) {
                     System.out.println(item.getName());
-                    System.out.println("===================");
                 }
+                System.out.println("===================");
             } else if (select == 2) {
                 System.out.println("Please, enter Id of need item: ");
                 String id = scanner.nextLine();
