@@ -27,14 +27,7 @@ public class Tracker {
      * @return список активных заявок.
      */
     public Item[] findAll() {
-        Item[] result = new Item[position];
-        int size = 0;
-        for (Item item : items) {
-            if (item != null) {
-                result[size++] = item;
-            }
-        }
-        return Arrays.copyOf(result, size);
+        return Arrays.copyOf(items, position);
     }
 
     /**
