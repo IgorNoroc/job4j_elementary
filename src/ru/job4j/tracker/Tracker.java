@@ -96,7 +96,7 @@ public class Tracker {
         int index = indexOf(id);
         item.setId(items[index].getId());
         items[index] = item;
-        return true;
+        return index != -1;
     }
 
     /**
@@ -109,6 +109,6 @@ public class Tracker {
         System.arraycopy(items, index + 1, items, index, (position - index));
         items[position - 1] = null;
         position--;
-        return true;
+        return index != -1;
     }
 }
