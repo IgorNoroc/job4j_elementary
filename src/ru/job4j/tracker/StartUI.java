@@ -23,7 +23,7 @@ public class StartUI {
                 System.out.println("=== All items ===");
                 Item[] items = tracker.findAll();
                 for (Item item : items) {
-                    System.out.println(item.getName());
+                    System.out.println(item);
                 }
                 System.out.println("===================");
             } else if (select == 2) {
@@ -49,14 +49,14 @@ public class StartUI {
             } else if (select == 4) {
                 System.out.println("Please, enter item Id: ");
                 Item item = tracker.findById(scanner.nextLine());
-                System.out.println("Found item : " + item.getName());
+                System.out.println("Found item : " + item);
                 System.out.println("===================");
             } else if (select == 5) {
                 System.out.println("Please, enter name to search: ");
                 Item[] items = tracker.findByName(scanner.nextLine());
                 System.out.println("=== All items of you search ===");
                 for (Item item : items) {
-                    System.out.println(item.getName());
+                    System.out.println(item);
                 }
                 System.out.println("===================");
             } else if (select == 6) {
