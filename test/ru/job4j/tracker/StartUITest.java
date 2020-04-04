@@ -26,8 +26,6 @@ public class StartUITest {
         StartUI.createItem(input, tracker);
         Item[] items = tracker.findAll();
         Item[] expected = {new  Item("Igor"), new Item("Tanea"), new Item("Olea")};
-        assertThat(items[0].getName(), is(expected[0].getName()));
-        assertThat(items[1].getName(), is(expected[1].getName()));
         assertThat(items[2].getName(), is(expected[2].getName()));
     }
 
