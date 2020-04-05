@@ -3,8 +3,10 @@ package ru.job4j.strategy;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.StringJoiner;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -29,12 +31,13 @@ public class PaintTest {
         assertThat(
                 this.out.toString(),
                 is(
-                        new StringBuilder("     ^     ").append(System.lineSeparator())
-                                .append("    ^ ^    ").append(System.lineSeparator())
-                                .append("   ^   ^   ").append(System.lineSeparator())
-                                .append("  ^     ^  ").append(System.lineSeparator())
-                                .append(" ^       ^ ").append(System.lineSeparator())
-                                .append("^^^^^^^^^^^").append(System.lineSeparator())
+                        new StringJoiner(System.lineSeparator())
+                                .add("     ^     ")
+                                .add("    ^ ^    ")
+                                .add("   ^   ^   ")
+                                .add("  ^     ^  ")
+                                .add(" ^       ^ ")
+                                .add("^^^^^^^^^^^")
                                 .toString()
                 )
         );
@@ -46,10 +49,11 @@ public class PaintTest {
         assertThat(
                 this.out.toString(),
                 is(
-                        new StringBuilder("XXXXXXXXX").append(System.lineSeparator())
-                                .append("X       X").append(System.lineSeparator())
-                                .append("X       X").append(System.lineSeparator())
-                                .append("XXXXXXXXX").append(System.lineSeparator())
+                        new StringJoiner(System.lineSeparator())
+                                .add("XXXXXXXXX")
+                                .add("X       X")
+                                .add("X       X")
+                                .add("XXXXXXXXX")
                                 .toString()
                 )
         );
