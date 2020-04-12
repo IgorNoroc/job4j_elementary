@@ -14,8 +14,12 @@ public class UniqueText {
         for (String word : origin) {
             check.add(word);
         }
-        // for-each origin -> new HashSet.
-        // for-each text -> hashSet.contains
+        for (String wrd : text) {
+            if (!check.contains(wrd)) {
+                rsl = false;
+                break;
+            }
+        }
         return rsl;
     }
 }
