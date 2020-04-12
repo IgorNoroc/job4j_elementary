@@ -39,7 +39,6 @@ public class UserTest {
         users.add(new User("user1", 32));
         users.add(new User("Ivan", 31));
         users.add(new User("user1", 31));
-        users.forEach(s -> System.out.println(s.getName()));
         Iterator<User> it = users.iterator();
         assertThat(it.next(), is(new User("Ivan", 31)));
         assertThat(it.next(), is(new User("Petr", 32)));
