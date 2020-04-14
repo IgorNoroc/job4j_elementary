@@ -20,9 +20,6 @@ public class StringCompare implements Comparator<String> {
                 break;
             }
         }
-        if (rsl == 0 && first.length != second.length) {
-            rsl = first.length - second.length;
-        }
-        return rsl;
+        return first.length != second.length ? first.length - second.length : 0;
     }
 }
