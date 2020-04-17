@@ -24,13 +24,11 @@ public class AttachmentSort {
         };
         attachments.sort(comparator);
         System.out.println(attachments);
-        Comparator sortByName = new Comparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
-                Attachment left = (Attachment) o1;
-                Attachment right = (Attachment) o2;
-                return left.getName().compareTo(right.getName());
-            }
+        Comparator<Attachment> sortByNameRev = (o1, o2) -> {
+            System.out.println("Compare by name reverse order " + o1.getName() + " " + o2.getName());
+            return o2.getName().compareTo(o1.getName());
         };
+        attachments.sort(sortByNameRev);
+        System.out.println(attachments);
     }
 }
