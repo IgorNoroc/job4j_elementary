@@ -87,14 +87,14 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2"
         );
         List<String> expected = Arrays.asList(
-                "K2/SK1/SSK2",
-                "K2/SK1/SSK1",
                 "K2",
-                "K1/SK2",
-                "K1/SK1/SSK2",
-                "K1/SK1/SSK1",
+                "K2/SK1/SSK1",
+                "K2/SK1/SSK2",
+                "K1",
                 "K1/SK1",
-                "K1"
+                "K1/SK1/SSK1",
+                "K1/SK1/SSK2",
+                "K1/SK2"
                 );
         Departments.sortDesc(input);
         assertThat(input, is(expected));
