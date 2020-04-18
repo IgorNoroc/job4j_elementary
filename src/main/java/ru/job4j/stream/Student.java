@@ -31,12 +31,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return score == student.score;
+        return Objects.equals(surname, student.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(score);
+        return Objects.hash(surname);
     }
 
     @Override
