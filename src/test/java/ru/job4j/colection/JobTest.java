@@ -12,7 +12,7 @@ public class JobTest {
     @Test
     public void whenOrderSortByName() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -22,7 +22,7 @@ public class JobTest {
         );
         list.sort(new JobSortOrderByName());
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user1", 6),
                         new Job("user2", 2),
@@ -36,7 +36,7 @@ public class JobTest {
     @Test
     public void whenSortReverseName() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -46,7 +46,7 @@ public class JobTest {
         );
         list.sort(new JobSortReverseByName());
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user3", 4),
                         new Job("user2", 2),
                         new Job("user2", 1),
@@ -60,7 +60,7 @@ public class JobTest {
     @Test
     public void whenSortOrByPriority() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -70,7 +70,7 @@ public class JobTest {
         );
         list.sort(new JobSortOrderByPriority());
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user2", 1),
                         new Job("user2", 2),
                         new Job("user1", 4),
@@ -84,7 +84,7 @@ public class JobTest {
     @Test
     public void whenSortReverseByPriority() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -94,7 +94,7 @@ public class JobTest {
         );
         list.sort(new JobSortReverseByPriority());
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 6),
                         new Job("user1", 4),
                         new Job("user3", 4),
@@ -108,7 +108,7 @@ public class JobTest {
     @Test
     public void whenSortOrByNameThenSortRevByPriority() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -118,7 +118,7 @@ public class JobTest {
         );
         list.sort(new JobSortOrderByName().thenComparing(new JobSortReverseByPriority()));
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 6),
                         new Job("user1", 4),
                         new Job("user2", 2),
@@ -132,7 +132,7 @@ public class JobTest {
     @Test
     public void whenSortOrdPriorityThenSortRevByName() {
         List<Job> list = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user1", 4),
                         new Job("user2", 2),
                         new Job("user1", 6),
@@ -142,7 +142,7 @@ public class JobTest {
         );
         list.sort(new JobSortOrderByPriority().thenComparing(new JobSortReverseByName()));
         List<Job> rsl = new ArrayList<>(
-                Arrays.asList(
+                List.of(
                         new Job("user2", 1),
                         new Job("user2", 2),
                         new Job("user3", 4),

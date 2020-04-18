@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class SchoolTest {
     @Test
     public void whenAClass() {
-        List<Student> input = Arrays.asList(
+        List<Student> input = List.of(
                 new Student(54),
                 new Student(30),
                 new Student(90),
@@ -22,7 +22,7 @@ public class SchoolTest {
                 new Student(80),
                 new Student(35)
         );
-        List<Student> expected = Arrays.asList(
+        List<Student> expected = List.of(
                 new Student(90),
                 new Student(75),
                 new Student(99),
@@ -34,7 +34,7 @@ public class SchoolTest {
 
     @Test
     public void whenBClass() {
-        List<Student> input = Arrays.asList(
+        List<Student> input = List.of(
                 new Student(54),
                 new Student(30),
                 new Student(90),
@@ -44,7 +44,7 @@ public class SchoolTest {
                 new Student(80),
                 new Student(35)
         );
-        List<Student> expected = Arrays.asList(
+        List<Student> expected = List.of(
                 new Student(54),
                 new Student(60)
         );
@@ -54,7 +54,7 @@ public class SchoolTest {
 
     @Test
     public void whenCClass() {
-        List<Student> input = Arrays.asList(
+        List<Student> input = List.of(
                 new Student(54),
                 new Student(30),
                 new Student(90),
@@ -65,7 +65,7 @@ public class SchoolTest {
                 new Student(35),
                 new Student(49)
         );
-        List<Student> expected = Arrays.asList(
+        List<Student> expected = List.of(
                 new Student(30),
                 new Student(35),
                 new Student(49)
@@ -76,7 +76,7 @@ public class SchoolTest {
 
     @Test
     public void whenCollectToMap() {
-        List<Student> input = Arrays.asList(
+        List<Student> input = List.of(
                 new Student("student1", 70),
                 new Student("student3", 45),
                 new Student("student2", 55),

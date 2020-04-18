@@ -11,14 +11,14 @@ import static org.junit.Assert.assertThat;
 public class SearchAttTest {
     @Test
     public void whenLookingForKey() {
-        List<Attachment> input = Arrays.asList(
+        List<Attachment> input = List.of(
                 new Attachment("user1", 10),
                 new Attachment("user2", 12),
                 new Attachment("user1", 15),
                 new Attachment("user1", 30),
                 new Attachment("user2", 43)
         );
-        List<Attachment> expected = Arrays.asList(
+        List<Attachment> expected = List.of(
                 new Attachment("user2", 12),
                 new Attachment("user2", 43)
         );
@@ -28,14 +28,14 @@ public class SearchAttTest {
 
     @Test
     public void whenLookingForSizeGrater20() {
-        List<Attachment> input = Arrays.asList(
+        List<Attachment> input = List.of(
                 new Attachment("user1", 10),
                 new Attachment("user2", 12),
                 new Attachment("user1", 15),
                 new Attachment("user1", 30),
                 new Attachment("user2", 43)
         );
-        List<Attachment> expected = Arrays.asList(
+        List<Attachment> expected = List.of(
                 new Attachment("user1", 30),
                 new Attachment("user2", 43)
         );

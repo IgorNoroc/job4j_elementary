@@ -2,6 +2,7 @@ package ru.job4j.students;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class StudentTest {
                 new Student("student3", 70),
                 new Student("student5", 60)
         );
-        List<Student> expected = Arrays.asList(
+        List<Student> expected = List.of(
                 new Student("student3", 90),
                 new Student("student6", 80),
                 new Student("student3", 70)
