@@ -18,14 +18,14 @@ public class RealizeFuncDiapasonTest {
 
     @Test
     public void whenLinearFunctionThenSquareResults() {
-        List<Double> result = RealizeFuncDiapason.diapason(3, 6,x -> x * x);
-        List<Double> expected = Arrays.asList(9D, 16D, 25D);
+        List<Double> result = RealizeFuncDiapason.diapason(3, 6, x -> 3 * x * x + 6 + 9);
+        List<Double> expected = Arrays.asList(42D, 63D, 90D);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenShowFunction() {
-        List<Double> result = RealizeFuncDiapason.diapason(5, 8, x -> x);
+        List<Double> result = RealizeFuncDiapason.diapason(5, 8, x -> 1 * x);
         List<Double> expected = Arrays.asList(5D, 6D, 7D);
         assertThat(result, is(expected));
     }
