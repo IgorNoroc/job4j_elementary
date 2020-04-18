@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 3. Банковские переводы.[#257526]
@@ -23,28 +25,21 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        User rsl = null;
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                rsl = user;
-                break;
-            }
-        }
-        return rsl;
+        List<User> rsl = users.keySet().stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .collect(Collectors.toList());
+        return rsl.size() > 0 ? rsl.get(0) : null;
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
         List<Account> accounts = users.get(findByPassport(passport));
+        List<Account> rsl = new ArrayList<>();
         if (accounts != null) {
-            for (Account acc : accounts) {
-                if (acc.getRequisite().equals(requisite)) {
-                    account = acc;
-                    break;
-                }
-            }
+            rsl = accounts.stream()
+                    .filter(acc -> acc.getRequisite().equals(requisite))
+                    .collect(Collectors.toList());
         }
-        return account;
+        return rsl.size() > 0 ? rsl.get(0) : null;
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
