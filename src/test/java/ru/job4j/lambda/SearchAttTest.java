@@ -22,7 +22,8 @@ public class SearchAttTest {
                 new Attachment("user2", 12),
                 new Attachment("user2", 43)
         );
-        assertThat(SearchAtt.filter(input, "user2"), is(expected));
+        List<Attachment> result = SearchAtt.filter(input, att -> att.getName().equals("user2"));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -38,6 +39,7 @@ public class SearchAttTest {
                 new Attachment("user1", 30),
                 new Attachment("user2", 43)
         );
-        assertThat(SearchAtt.filter(input, 20), is(expected));
+        List<Attachment> result = SearchAtt.filter(input, att -> att.getSize() > 20);
+        assertThat(result, is(expected));
     }
 }
