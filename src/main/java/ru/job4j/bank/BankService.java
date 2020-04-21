@@ -28,22 +28,25 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        return users.get(findByPassport(passport)) != null ?
-                users.get(findByPassport(passport)).stream()
-                        .filter(acc -> acc.getRequisite().equals(requisite))
-                        .findAny().orElse(null) : null;
+        if (users.get(findByPassport(passport)) == null) {
+            return null;
+        }
+        return users.get(findByPassport(passport)).stream()
+                .filter(acc -> acc.getRequisite().equals(requisite))
+                .findAny().orElse(null);
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
-        boolean rsl = false;
+        if (findByRequisite(srcPassport, srcRequisite) == null
+                && findByRequisite(destPassport, destRequisite) == null
+                && findByRequisite(srcPassport, destRequisite).getBalance() < amount) {
+            return false;
+        }
         Account srcAcc = findByRequisite(srcPassport, srcRequisite);
         Account destAcc = findByRequisite(destPassport, destRequisite);
-        if (srcAcc != null && destAcc != null && srcAcc.getBalance() >= amount) {
-            srcAcc.setBalance(srcAcc.getBalance() - amount);
-            destAcc.setBalance(destAcc.getBalance() + amount);
-            rsl = true;
-        }
-        return rsl;
+        srcAcc.setBalance(srcAcc.getBalance() - amount);
+        destAcc.setBalance(destAcc.getBalance() + amount);
+        return true;
     }
 }
