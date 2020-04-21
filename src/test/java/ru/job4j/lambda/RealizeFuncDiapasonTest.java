@@ -25,8 +25,8 @@ public class RealizeFuncDiapasonTest {
 
     @Test
     public void whenShowFunction() {
-        List<Double> result = RealizeFuncDiapason.diapason(5, 8, x -> 1 * x);
-        List<Double> expected = Arrays.asList(5D, 6D, 7D);
+        List<Double> result = RealizeFuncDiapason.diapason(5, 8, x -> Math.pow(3, x));
+        List<Double> expected = Arrays.asList(243D, 729D, 2187D);
         assertThat(result, is(expected));
     }
 }
