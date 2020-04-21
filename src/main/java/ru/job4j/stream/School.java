@@ -1,5 +1,6 @@
 package ru.job4j.stream;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -16,8 +17,7 @@ public class School {
     }
 
     public Map<String, Student> collectToMap(List<Student> students) {
-        return students.stream()
-                .distinct()
+        return new HashSet<>(students).stream()
                 .collect(Collectors.toMap(
                         Student::getSurname,
                         v -> v)
