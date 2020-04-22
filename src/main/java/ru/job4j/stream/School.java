@@ -17,10 +17,10 @@ public class School {
     }
 
     public Map<String, Student> collectToMap(List<Student> students) {
-        return new HashSet<>(students).stream()
-                .collect(Collectors.toMap(
-                        Student::getSurname,
-                        v -> v)
+        return students.stream()
+                .collect(Collectors.toMap(Student::getSurname,
+                        student -> student,
+                        (s1, s2) -> s1)
                 );
     }
 }
