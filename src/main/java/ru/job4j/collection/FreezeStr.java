@@ -1,6 +1,9 @@
 package ru.job4j.collection;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.function.Function;
 
 /**
  * Проверить две строчки на идентичность.
